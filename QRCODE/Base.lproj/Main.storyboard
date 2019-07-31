@@ -1,24 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="iOS 13.0 system colors" minToolsVersion="11.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QRCODE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5M-wM-Asn">
+                                <rect key="frame" x="70" y="20" width="235" height="367"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="systemTealColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLg-oG-5gl">
+                                <rect key="frame" x="16" y="568" width="343" height="53"/>
+                                <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oa5-KU-H7k">
+                                <rect key="frame" x="70" y="455" width="235" height="69"/>
+                                <color key="backgroundColor" red="0.69909196169999999" green="0.7388134757" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="SCAN AGAIN"/>
+                                <connections>
+                                    <action selector="scanAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fc-hR-LkL"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aLg-oG-5gl" secondAttribute="trailing" constant="16" id="E6u-GX-1PI"/>
+                            <constraint firstItem="oa5-KU-H7k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="G4N-hX-5qk"/>
+                            <constraint firstItem="G5M-wM-Asn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="HOh-EF-IkG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="G5M-wM-Asn" secondAttribute="bottom" constant="280" id="Khv-gI-5S3"/>
+                            <constraint firstItem="G5M-wM-Asn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="O5j-GF-bOI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oa5-KU-H7k" secondAttribute="trailing" constant="70" id="SaT-hk-yz6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aLg-oG-5gl" secondAttribute="bottom" constant="46" id="a3i-lc-cex"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G5M-wM-Asn" secondAttribute="trailing" constant="70" id="hPJ-Ti-Rov"/>
+                            <constraint firstItem="oa5-KU-H7k" firstAttribute="top" secondItem="G5M-wM-Asn" secondAttribute="bottom" constant="68" id="loZ-Fe-7NJ"/>
+                            <constraint firstItem="aLg-oG-5gl" firstAttribute="top" secondItem="G5M-wM-Asn" secondAttribute="bottom" constant="181" id="vQH-nc-sLc"/>
+                            <constraint firstItem="aLg-oG-5gl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wFA-3S-f1t"/>
+                            <constraint firstItem="aLg-oG-5gl" firstAttribute="top" secondItem="oa5-KU-H7k" secondAttribute="bottom" constant="44" id="zTo-ho-L40"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="camWindow" destination="G5M-wM-Asn" id="nYf-h7-v0R"/>
+                        <outlet property="label1" destination="aLg-oG-5gl" id="cBN-9E-2Xq"/>
+                        <outlet property="scanBtn" destination="oa5-KU-H7k" id="op7-Xb-PXL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="130.40000000000001" y="94.902548725637189"/>
         </scene>
     </scenes>
 </document>
